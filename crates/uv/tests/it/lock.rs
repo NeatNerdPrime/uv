@@ -31561,7 +31561,7 @@ fn collapsed_error_with_marker_packages() -> Result<()> {
         version = "1.0.0"
         requires-python = ">=3.12"
         dependencies = [
-            "anyio<=4.3.0; sys_platform == 'linux'",
+            "anyio<=4.3.0; sys_platform == 'other'",
             "anyio>=4.4.0; python_version < '3.14'",
         ]
     "#};
@@ -31576,7 +31576,7 @@ fn collapsed_error_with_marker_packages() -> Result<()> {
     ----- stdout -----
 
     ----- stderr -----
-      × No solution found when resolving dependencies for split (markers: python_full_version < '3.14' and sys_platform == 'linux'):
+      × No solution found when resolving dependencies for split (markers: python_full_version < '3.14' and sys_platform == 'other'):
       ╰─▶ Because your project depends on anyio{sys_platform == 'linux'} and anyio{python_full_version < '3.14'}>=4.4.0, we can conclude that your project's requirements are unsatisfiable.
     ");
 
